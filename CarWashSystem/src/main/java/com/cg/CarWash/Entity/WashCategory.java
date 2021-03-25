@@ -1,7 +1,14 @@
 package com.cg.CarWash.Entity;
 
-public class WashCategory {
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+import lombok.Data;
+
+@Data
+@Document(collection = "washcategory")
+public class WashCategory {
+@Id
 	private String categoryId;
 	private String categoryName;
 	public String getCategoryId() {

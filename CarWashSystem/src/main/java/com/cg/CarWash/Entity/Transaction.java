@@ -2,8 +2,14 @@ package com.cg.CarWash.Entity;
 
 import java.time.LocalDate;
 
-public class Transaction {
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+import lombok.Data;
+@Data
+@Document(collection = "transaction")
+public class Transaction {
+@Id
 	private long transaccountId;
 	private double transAmount;
 	private LocalDate transDate;
