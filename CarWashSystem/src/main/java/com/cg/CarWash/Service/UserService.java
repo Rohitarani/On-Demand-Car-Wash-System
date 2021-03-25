@@ -1,5 +1,8 @@
 package com.cg.CarWash.Service;
 
-public class UserService {
+import com.cg.CarWash.Dto.UserForm;
 
+
+public interface UserService {
+	public String addUser(UserForm userform);
 }
