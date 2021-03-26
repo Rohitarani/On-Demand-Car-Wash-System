@@ -1,5 +1,7 @@
 package com.cg.CarWash.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,5 +29,17 @@ public class UserServiceImpl implements UserService {
 		dao.addUser(user);
 		return "added";
 		
+	}
+	@Override
+	public List<User> viewAllUsers() {
+		List<User>  allusers= dao.viewAllUsers();
+		
+		
+		return allusers;
+			
+	}
+	@Override
+	public User updateUser(User user) {
+		return dao.updateUser(user);
 	}
 }
