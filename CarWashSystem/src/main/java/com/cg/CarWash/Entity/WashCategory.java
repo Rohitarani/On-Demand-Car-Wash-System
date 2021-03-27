@@ -6,11 +6,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.Data;
 
 @Data
-@Document(collection = "washcategory")
+@Document(collection = "washCategory")
 public class WashCategory {
 @Id
 	private String categoryId;
 	private String categoryName;
+	private BookingInfo user = new BookingInfo();
 	public String getCategoryId() {
 		return categoryId;
 	}
@@ -22,6 +23,12 @@ public class WashCategory {
 	}
 	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
+	}
+	public BookingInfo getUser() {
+		return user;
+	}
+	public void setUser(BookingInfo user) {
+		this.user = user;
 	}
 	
 }

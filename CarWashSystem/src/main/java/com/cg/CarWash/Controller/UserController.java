@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 
 import com.cg.CarWash.Dto.AccountMessage;
 import com.cg.CarWash.Dto.UserForm;
-import com.cg.CarWash.Entity.User;
+import com.cg.CarWash.Entity.BookingInfo;
 import com.cg.CarWash.Service.UserService;
 
 
@@ -39,13 +39,13 @@ public class UserController {
 	}
 
 @GetMapping("/viewAllUsers")
-public List<User> viewAllUsers() {
+public List<BookingInfo> viewAllUsers() {
 	return service.viewAllUsers();
 }
 
 @CrossOrigin
 @GetMapping("/updateUser")
-public AccountMessage updateUser(@RequestBody User user) {
+public AccountMessage updateUser(@RequestBody BookingInfo user) {
 	service.updateUser(user);
 	 return new AccountMessage("updated");
 }

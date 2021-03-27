@@ -1,6 +1,6 @@
 package com.cg.CarWash.Dao;
 
-import com.cg.CarWash.Entity.User;
+import com.cg.CarWash.Entity.BookingInfo;
 
 import java.util.List;
 
@@ -17,16 +17,16 @@ public class CarWashDaoImpl implements CarWashDao {
 	@Autowired
 	private MongoTemplate mongoTemplate;
 	@Override
-	public boolean addUser(User user) {
+	public boolean addUser(BookingInfo user) {
 		mongoTemplate.save(user);
 		// Now, user object will contain the ID as well
 		return true;
 	}
 	
 	@Override
-	public List<User> viewAllUsers() {
+	public List<BookingInfo> viewAllUsers() {
 		// TODO Auto-generated method stub
-		return mongoTemplate.findAll(User.class);
+		return mongoTemplate.findAll(BookingInfo.class);
 	}
 	
 	
@@ -34,14 +34,14 @@ public class CarWashDaoImpl implements CarWashDao {
 
 
 	@Override
-	public User updateUser(User user) {
+	public BookingInfo updateUser(BookingInfo user) {
 		Query query = new Query();
         query.addCriteria(Criteria.where("userId").is(user.getUserId()));
         Update update = new Update();
         update.set("userName", user.getUserName());
         update.set("userContact", user.getUserContact());
         update.set("email", user.getEmail());
-        return mongoTemplate.findAndModify(query, update, User.class);// TODO Auto-generated method stub
+        return mongoTemplate.findAndModify(query, update, BookingInfo.class);// TODO Auto-generated method stub
 		//return null;
 	}
 }

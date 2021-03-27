@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.cg.CarWash.Dao.CarWashDao;
 import com.cg.CarWash.Dto.UserForm;
-import com.cg.CarWash.Entity.User;
+import com.cg.CarWash.Entity.BookingInfo;
 
 @Service("customerser")
 @Transactional
@@ -17,7 +17,7 @@ public class UserServiceImpl implements UserService {
 	private CarWashDao dao;
 	@Override
 	public String addUser(UserForm userform) {
-		User user = new User();
+		BookingInfo user = new BookingInfo();
 		//user.setUserId();
 		user.setUserName(userform.getUserName());
 		user.setUserContact(userform.getUserContact());
@@ -31,15 +31,15 @@ public class UserServiceImpl implements UserService {
 		
 	}
 	@Override
-	public List<User> viewAllUsers() {
-		List<User>  allusers= dao.viewAllUsers();
+	public List<BookingInfo> viewAllUsers() {
+		List<BookingInfo>  allusers= dao.viewAllUsers();
 		
 		
 		return allusers;
 			
 	}
 	@Override
-	public User updateUser(User user) {
+	public BookingInfo updateUser(BookingInfo user) {
 		return dao.updateUser(user);
 	}
 }

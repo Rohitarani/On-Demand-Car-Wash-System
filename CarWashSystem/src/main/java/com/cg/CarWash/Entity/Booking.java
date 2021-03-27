@@ -11,7 +11,7 @@ public class Booking {
 	@Id
 private String bookingId;
 private WashCategory category = new WashCategory();
-private User user = new User();
+private BookingInfo user = new BookingInfo();
 public String getBookingId() {
 	return bookingId;
 }
@@ -24,10 +24,10 @@ public WashCategory getCategory() {
 public void setCategory(WashCategory category) {
 	this.category = category;
 }
-public User getUser() {
+public BookingInfo getUser() {
 	return user;
 }
-public void setUser(User user) {
+public void setUser(BookingInfo user) {
 	this.user = user;
 }
 
