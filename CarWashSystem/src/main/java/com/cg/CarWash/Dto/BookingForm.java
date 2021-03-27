@@ -1,22 +1,19 @@
-package com.cg.CarWash.Entity;
+package com.cg.CarWash.Dto;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import com.cg.CarWash.Entity.User;
+import com.cg.CarWash.Entity.WashCategory;
 
-import lombok.Data;
-
-@Data
-@Document(collection = "bookingInfo")
-public class BookingInfo {
-	@Id
+public class BookingForm {
 	private String bookingId;
 	private String carName;
 	private Integer carSeater;
 	private String carNumber;
 	private String CarModel;
+	private WashCategory category = new WashCategory();
+	private User user=new User();
 	private String contact;
 	private String city;
 	private String country;
@@ -24,8 +21,6 @@ public class BookingInfo {
 	private String pincode;
 	private LocalDate date;
 	private LocalTime time;
-	
-	
 	public String getBookingId() {
 		return bookingId;
 	}
@@ -56,23 +51,17 @@ public class BookingInfo {
 	public void setCarModel(String carModel) {
 		CarModel = carModel;
 	}
+	public WashCategory getCategory() {
+		return category;
+	}
+	public void setCategory(WashCategory category) {
+		this.category = category;
+	}
 	public String getContact() {
 		return contact;
 	}
 	public void setContact(String contact) {
 		this.contact = contact;
-	}
-	public LocalDate getDate() {
-		return date;
-	}
-	public void setDate(LocalDate date) {
-		this.date = date;
-	}
-	public LocalTime getTime() {
-		return time;
-	}
-	public void setTime(LocalTime time) {
-		this.time = time;
 	}
 	public String getCity() {
 		return city;
@@ -97,6 +86,24 @@ public class BookingInfo {
 	}
 	public void setPincode(String pincode) {
 		this.pincode = pincode;
-	} 
+	}
+	public LocalDate getDate() {
+		return date;
+	}
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
+	public LocalTime getTime() {
+		return time;
+	}
+	public void setTime(LocalTime time) {
+		this.time = time;
+	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
 	
 }

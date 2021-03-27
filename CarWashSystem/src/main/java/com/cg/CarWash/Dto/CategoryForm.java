@@ -1,21 +1,10 @@
-package com.cg.CarWash.Entity;
+package com.cg.CarWash.Dto;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-import lombok.Data;
-
-@Data
-@Document(collection = "washcategory")
-public class WashCategory {
-    @Id
+public class CategoryForm {
 	private String categoryId;
 	private String categoryName;
 	private String description;
 	private String cost;
-	
-	
-	
 	public String getCategoryId() {
 		return categoryId;
 	}
@@ -28,12 +17,6 @@ public class WashCategory {
 	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
 	}
-	/*public Booking getUser() {
-		return user;
-	}
-	public void setUser(Booking user) {
-		this.user = user;
-	}*/
 	public String getDescription() {
 		return description;
 	}

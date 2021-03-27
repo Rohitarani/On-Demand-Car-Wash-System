@@ -13,7 +13,7 @@ public class Transaction {
 	private long transaccountId;
 	private double transAmount;
 	private LocalDate transDate;
-	private BookingInfo user = new BookingInfo();
+	private Booking user = new Booking();
 	public long getTransaccountId() {
 		return transaccountId;
 	}
@@ -32,10 +32,10 @@ public class Transaction {
 	public void setTransDate(LocalDate transDate) {
 		this.transDate = transDate;
 	}
-	public BookingInfo getUser() {
+	public Booking getUser() {
 		return user;
 	}
-	public void setUser(BookingInfo user) {
+	public void setUser(Booking user) {
 		this.user = user;
 	}
 }
